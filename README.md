@@ -22,21 +22,13 @@ Demo app could be accessed using following credentials:
 
 # Configure Development Environment
 
-The codebase contains following folders of concern:
+The codebase contains following 4 folders of concern:
 
-- clients
-- composer
-- api
-- iot
-
-clients folder contains web and mobile client applications
-
-composer folder contains hyperledger fabric code, inclusing business network specification and chaincodes
-
-api folder contains api and a few hosted iFrames and services
-
-iot folder contains iot simulaters and related services to manage push and pull data from iot devices to blockchain and vice versa
-
+- clients: contains web and mobile client applications
+- composer: contains hyperledger fabric code, inclusing business network specification and chaincodes- api
+- iot: contains iot simulaters and related services to manage push and pull data from iot devices to blockchain and vice versa
+clients folder 
+- api: contains api and a few hosted iFrames and services
 
 # Deployment
 
