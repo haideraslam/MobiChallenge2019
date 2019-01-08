@@ -34,3 +34,10 @@ composer folder contains hyperledger fabric code, inclusing business network spe
 api folder contains api and a few hosted iFrames and services
 
 iot folder contains iot simulaters and related services to manage push and pull data from iot devices to blockchain and vice versa
+
+
+# Deployment
+
+All the components are containerized and can be run using common docker commands. Please see docker-compose.yml file in respective folders for details.
+
+If you need any help regarding deployment, please send an email to haider.aslam@netsoltech.com
