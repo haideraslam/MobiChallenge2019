@@ -1,6 +1,6 @@
 # OTOZ
 
-- Creates a digital twin of each asset/vehicle, capturing relevant data and transforming this data into insights by applying AI and ML. 
+- Creates a digital twin of each asset/vehicle, capturing relevant data using IoT and transforming this data into insights by applying AI and ML. 
 - Democratizes data to third-parties to create new and innovative business models 
 - Tokenises vehicle assets, creating new forms of vehicle ownership and revenue streams. 
 - creates a circular economy leveraging a utility token, aligning incentives across all stakeholders in the mobility ecosystem.
