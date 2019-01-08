@@ -9,13 +9,13 @@
 
 Demo app could be accessed using following credentials:
 
-Fleet Owner App: http://aarvm-dev.westeurope.cloudapp.azure.com:81
-User: otoz.fleet.owner@gmail.com
-Password: mobichallenge2019
+- Fleet Owner App: http://aarvm-dev.westeurope.cloudapp.azure.com:81
+- User: otoz.fleet.owner@gmail.com
+- Password: mobichallenge2019
 
-Renter App: http://aarvm-dev.westeurope.cloudapp.azure.com
-User: otoz.renter@gmail.com
-Password: mobichallenge2019
+- Renter App: http://aarvm-dev.westeurope.cloudapp.azure.com
+- User: otoz.renter@gmail.com
+- Password: mobichallenge2019
 
 
 # Configure Development Environment
