@@ -27,7 +27,6 @@ The codebase contains following 4 folders of concern:
 - clients: contains web and mobile client applications
 - composer: contains hyperledger fabric code, inclusing business network specification and chaincodes- api
 - iot: contains iot simulaters and related services to manage push and pull data from iot devices to blockchain and vice versa
-clients folder 
 - api: contains api and a few hosted iFrames and services
 
 # Deployment
