@@ -1,0 +1,18 @@
+{
+  "name": "assetregapi",
+  "version": "1.0.0",
+  "description": "REST API for Asset Registry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Huma Qureshi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "fabric-ca-client": "unstable",
+    "fabric-client": "^1.2.1",
+    "grpc": "^1.6.0"
+  }
+}

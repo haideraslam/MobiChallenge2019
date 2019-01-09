@@ -1,0 +1,10 @@
+**/*.bna
+**/*.card
+node_modules/
+hfc-key-store/
+iot/vehicle-simulator/bin/
+iot/vehicle-simulator/obj/
+iot/vehicle-simulator/out/
+iot/remote-control/obj/
+iot/remote-control/bin/
+iot/remote-control/.vscode/

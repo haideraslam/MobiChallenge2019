@@ -1,0 +1,14 @@
+FROM docker
+RUN apk update
+RUN apk add nodejs
+RUN apk add npm
+RUN apk add python
+RUN apk add make
+RUN apk add g++
+RUN npm install -g docker-compose
+RUN npm install -g passport-google-oauth2
+RUN npm install -g composer-cli@0.19 --unsafe
+RUN npm install -g composer-rest-server@0.19 --unsafe
+RUN apk add bash
+ENTRYPOINT [ "sh", "-c", "composer-rest-server -c $COMPOSER_CARD -n always -m $COMPOSER_MULTIUSER -a $COMPOSER_AUTHENTICATION -w $COMPOSER_WEBSOCKETS -p $COMPOSER_PORT" ]
+

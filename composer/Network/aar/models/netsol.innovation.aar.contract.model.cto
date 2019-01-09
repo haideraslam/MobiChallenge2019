@@ -1,0 +1,115 @@
+namespace netsol.innovation.aar.contract.model
+
+import netsol.innovation.aar.participants.model.*
+import netsol.innovation.aar.vehicle.model.*
+
+asset Contract identified by contractId {
+  o String contractId
+  
+  --> Vehicle vehicle
+  --> FleetOwner fleetOwner
+  --> Renter renter
+
+  o Double amount optional
+  o String contractDetails optional
+  o ContractStatus contractStatus
+  o String pickupLocation
+  o String dropoffLocation
+  o DateTime startDate
+  o DateTime endDate optional
+  o TripSummary tripSummary optional
+}
+
+concept TripSummary{
+  o Double averageSpeed
+  o Double noOfHardBrakes
+  o Double duration
+  o Double tolls
+  o String tirePressure
+  o Double collisionCount
+  o Double fuelConsumption
+  o Double mileage
+  o Double rating
+  o String dropOffCoordinates
+
+}
+
+enum ContractStatus {
+ o PENDING_PICKUP
+ o PICKED_UP
+ o DROPPED_OFF
+}
+
+transaction CreateContract
+{
+  o String id
+  --> Vehicle vehicle
+  --> Renter renter
+  o String pickupLocation
+  o String dropoffLocation
+  o Double amount
+  o DateTime startDate
+  o DateTime endDate
+  o String contractTerms
+}
+
+transaction PickupCar
+{ 
+  --> Contract contract
+}
+
+event CarUnlock
+{
+  o String vin
+  o String contractId
+}
+
+event ContractCreated
+{ }
+
+event ContractSigned
+{ }
+
+transaction DropoffCar
+{ 
+  --> Contract contract
+}
+
+transaction UpdateTripSummary
+{ 
+  --> Contract contract
+  o Double averageSpeed
+  o Double noOfHardBrakes
+  o Double duration
+  o Double tolls
+  o String tirePressure
+  o Double fuelConsumption
+  o Double mileage
+  o Double rating
+  o Double collisionCount
+  o String dropOffCoordinates
+
+}
+@commit(false)
+@returns(Contract[])
+transaction GetAllContracts
+{
+  --> FleetOwner fleetOwner
+}
+event CarLock
+{
+  o String vin
+  o String contractId
+}
+
+event StoreDropoffLocation
+{ }
+
+event NotifyInsurer
+{ }
+
+event NotifyOwner
+{ }
+
+event TripSummaryUpdated
+{ }

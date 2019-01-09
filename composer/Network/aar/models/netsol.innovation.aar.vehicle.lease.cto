@@ -1,0 +1,54 @@
+namespace netsol.innovation.aar.vehicle.lease
+
+import netsol.innovation.aar.participants.model.*
+import netsol.innovation.aar.token.model.*
+import netsol.innovation.aar.vehicle.model.*
+
+asset VehicleLeaseDeal identified by dealId {
+  o String dealId
+  --> Vehicle vehicle
+
+  --> FinanceCompany financeCompany optional
+  --> Dealer dealer optional
+  --> BusinessPartner lessee optional
+
+  o VehicleLeaseStatus status
+  o VehicleLeaseDetails leaseDetails optional
+}
+
+// This will create a new vehicle lease deal record and allocate the car to FC
+transaction AllocateCarToFc
+{
+  --> Vehicle vehicle
+  --> FinanceCompany financeCompany
+}
+
+// FC will use this to allocate a car to dealer
+transaction AllocateCarToDealer
+{
+  --> Vehicle vehicle
+  --> Dealer dealer
+}
+concept VehicleLeaseDetails {
+   o String contractDetails optional
+   o LeaseTerms leaseTerms optional
+}
+
+concept LeaseTerms {
+  o Integer loanAmount optional
+  o Integer downPayment optional
+  o Integer totalTerms optional
+  o Integer paymentFrequencyInMonths optional
+}
+
+enum VehicleLeaseStatus {
+  o OEM_REGISTERED // not needed?
+  o OEM_TO_FC_ALLOCATED
+  o FC_TO_DEALER_ALLOCATED
+
+  o LEASING_LOAN_APPLIED
+  o LEASING_LOAN_APPROVED
+  o LEASING_LOAN_REJECTED
+  o LEASING_CONTRACT_ADDED
+  o LEASING_CONTRACT_SIGNED
+}

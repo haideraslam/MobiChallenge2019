@@ -1,0 +1,38 @@
+.text {
+  font-size: 11px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.btn-position {
+  position: relative;
+  margin: auto;
+  max-width: 200px;
+  margin-top: -15px;
+}
+
+.ellipse {
+  white-space: nowrap; 
+  width: 125px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.total{
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 6
+}
+
+.gbp{
+  font-size: 14px;
+  line-height: 6
+}
+
+.total-amount{
+  margin-left: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -1,0 +1,176 @@
+#
+# Copyright IBM Corp All Rights Reserved
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+version: '3'
+networks:
+  basic:
+services:
+  car1:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167001
+      - MILAGE=20000
+      - MOVING=0
+      - AVG_MILES_P_HOUR=85
+      - HBREAK_PROB=1
+      - AVG_FUEL_CONS=20 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167001;SharedAccessKey=Z1eoutnDcKzSsFPhy7oUB4sEfP4Zqcye1/JHE8AaNkI=
+      - ROUTE_FILE=/app/route.txt
+    container_name: car1
+    networks:
+      - basic
+  car2:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167002
+      - MILAGE=1349
+      - MOVING=0
+      - AVG_MILES_P_HOUR=10
+      - HBREAK_PROB=20
+      - AVG_FUEL_CONS=15 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167002;SharedAccessKey=d2LPvme0ClbpKi+OyFWK7abwPveKag4Psgl9fI0+dks=
+      - ROUTE_FILE=/app/route.4.txt
+    container_name: car2
+    networks:
+      - basic
+  car3:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167003
+      - MILAGE=267
+      - MOVING=0
+      - AVG_MILES_P_HOUR=60
+      - HBREAK_PROB=10
+      - AVG_FUEL_CONS=50 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167003;SharedAccessKey=uDh9/G20R6YFVI4IhE/G3eundB4F0ba/63i3kVWfxcM=
+      - ROUTE_FILE=/app/route.3.txt
+    container_name: car3
+    networks:
+      - basic
+  car4:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167004
+      - MILAGE=57308
+      - MOVING=0
+      - AVG_MILES_P_HOUR=38
+      - HBREAK_PROB=5
+      - AVG_FUEL_CONS=25 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167004;SharedAccessKey=NTdP9tu79hyRmVdFA9S0oIvvNqigRojThfSIMUPLPVs=
+      - ROUTE_FILE=/app/route.2.txt
+    container_name: car4
+    networks:
+      - basic
+  car5:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167005
+      - MILAGE=49383
+      - MOVING=0
+      - AVG_MILES_P_HOUR=45
+      - HBREAK_PROB=4
+      - AVG_FUEL_CONS=19 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167005;SharedAccessKey=1feCMX+LTa77uXMdNiH6KnrwnlgLX7OtzxPLR1JB6C4=
+      - ROUTE_FILE=/app/route.1.txt
+    container_name: car5
+    networks:
+      - basic
+  simulatedcar1:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167006
+      - MILAGE=20000
+      - MOVING=1
+      - AVG_MILES_P_HOUR=85
+      - HBREAK_PROB=1
+      - AVG_FUEL_CONS=20 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167006;SharedAccessKey=Hve/uIjYK4ZtkokKgdszCshOf0Wbq3ZFppO8tVi1iPQ=
+      - ROUTE_FILE=/app/route.txt
+    container_name: simulatedcar1
+    networks:
+      - basic
+  simulatedcar2:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167007
+      - MILAGE=1349
+      - MOVING=1
+      - AVG_MILES_P_HOUR=10
+      - HBREAK_PROB=20
+      - AVG_FUEL_CONS=15 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167007;SharedAccessKey=fu0I1Zuyn6wVl3QOCAMr3CTrUqJ9wOGRsx+SA9mL+oc=
+      - ROUTE_FILE=/app/route.1.txt
+    container_name: simulatedcar2
+    networks:
+      - basic
+  simulatedcar3:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167008
+      - MILAGE=267
+      - MOVING=1
+      - AVG_MILES_P_HOUR=60
+      - HBREAK_PROB=10
+      - AVG_FUEL_CONS=50 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167008;SharedAccessKey=betA/UvHcYRtB0pfb60oTpFizJ3FoAoqjdhtm95rimE=
+      - ROUTE_FILE=/app/route.2.txt
+    container_name: simulatedcar3
+    networks:
+      - basic
+  simulatedcar4:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167009
+      - MILAGE=57308
+      - MOVING=0
+      - AVG_MILES_P_HOUR=38
+      - HBREAK_PROB=5
+      - AVG_FUEL_CONS=25 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167009;SharedAccessKey=cNWZUkPiw8ycOFV3I9Z7VVk0DfkazubjDTa5TSNM0B0=
+      - ROUTE_FILE=/app/route.3.txt
+    container_name: simulatedcar4
+    networks:
+      - basic
+  simulatedcar5:
+    image: innovationlab/simulateddevice
+    restart: always
+    environment:
+      - VIN=WP0ZZZ99ZJS167010
+      - MILAGE=49383
+      - MOVING=0
+      - AVG_MILES_P_HOUR=45
+      - HBREAK_PROB=4
+      - AVG_FUEL_CONS=19 
+      - CONN_STR=HostName=iot-hub-mobi.azure-devices.net;DeviceId=WP0ZZZ99ZJS167010;SharedAccessKey=HgfROaxJatXBUaBJI3mII6JALEWbnb40RtfD8pM0lJk=
+      - ROUTE_FILE=/app/route.4.txt
+    container_name: simulatedcar5
+    networks:
+      - basic
+  chaintodevice:
+    image: innovationlab/chaintodevice
+    restart: always
+    network_mode: "host"
+    environment:
+      - WS_SERVER_URL=ws://localhost:3000
+    container_name: chaintodevice
+  loctracsrv:
+    image: innovationlab/loctracsrv
+    restart: always
+    environment:
+      - IOT_HUB_CONN_STR=HostName=iot-hub-mobi.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=lI0xifljYwrDBQnlC3fJshGS/buNxdOTsSDFdjJ5R24=
+    container_name: loctracsrv
+    ports:
+      - 3005:3005
+    networks:
+      - basic

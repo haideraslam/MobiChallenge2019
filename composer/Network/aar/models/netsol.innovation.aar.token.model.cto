@@ -1,0 +1,71 @@
+namespace netsol.innovation.aar.token.model
+
+import netsol.innovation.aar.participants.model.*
+import netsol.innovation.aar.vehicle.model.*
+import netsol.innovation.aar.contract.model.*
+
+asset Account identified by address {
+  o String address
+  o Double balance
+  o Double cashBalance
+  o TransactionHistory[] transactionHistory optional
+}
+concept TransactionHistory {
+  o TransactionType type // Earn or Burn
+  o Double amount // No. of tokens
+  o TransactionReason reason // How tokens were earned of burned
+  o DateTime timeStamp // Timestamp of transcation
+  --> Contract contract optional // Trip ID
+  o TransactionCategory category // Cash or Token
+  o String comments optional
+}
+concept Discount {
+  o Double amount
+}
+enum TransactionType {
+ o Earn
+ o Burn
+ o Debit
+ o Credit
+}
+enum TransactionCategory {
+ o Cash
+ o Token
+}
+enum TransactionReason {
+ o OnBoarding
+ o DriverBehavior
+ o TripCompletion
+ o DiscountAvailed
+ o CashDeposit
+ o ContractAmount
+}
+transaction TokenTransfer {
+  --> Account fromAccount
+  --> Account toAccount
+  o Double amount
+}
+@returns(Discount)
+transaction CalculateDiscount {
+  --> Account account
+}
+transaction RedeemTokens {
+  --> Account account
+  --> Contract contract optional
+}
+event TokenTransferEvent {
+}
+event TokensAllocated{
+}
+event DiscountCalulated{
+}
+event TokensRedeemed{
+}
+event PaymentSuccessful{
+}
+event TokenTransferToFOEvent {
+}
+event TokenTransferToRenterEvent {
+}
+event TokenTransferToFleetOwnerEvent {
+}

@@ -1,0 +1,288 @@
+/* You can add global styles to this file, and also import other style files test*/
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "assets/stylesheet/common.css";
+
+/* ============================= Colors ==================================== */
+:root {
+  --light-white: #F7F7F7;
+  --white: white;
+  --black: black;
+  --label-color: #848484;
+  --primary: #106C93;
+  --primary-hover: #08678d;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+}
+
+/* ============================= Colors ==================================== */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 0.5rem .8rem;
+  }
+
+  .wrapper {
+    background-color: var(--white);
+    min-height: 490px;
+  }
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+@font-face {
+  font-family: GothamPro;
+  src: url(assets/fonts/GothamPro_1.ttf);
+}
+
+@font-face {
+  font-family: GothamProBold;
+  src: url(assets/fonts/GothamPro-Bold_0.ttf);
+}
+
+@font-face {
+  font-family: GothamProLight;
+  src: url(assets/fonts/GothamPro-Light_0.ttf);
+}
+
+/* ============================= Body ====================================== */
+body {
+  background-color: var(--light-white);
+  font-family: GothamPro;
+}
+
+.heading {
+  font-weight: bolder;
+}
+
+.label {
+  color: var(--label-color);
+  font-size: 11px;
+  line-height: 28px;
+}
+
+.text {
+  color: var(--label-color);
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.text-bold {
+  color: var(--black);
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: bold;
+}
+
+.total-value {
+  color: var(--primary);
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.rating-stars {
+  width: 20px;
+}
+
+.center-align {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upload-btn-Area {
+  min-width: 400px;
+  min-height: 280px;
+  background: #DBDEE7;
+  border: 1px dashed;
+  display: table;
+  text-align: center;
+  cursor: pointer;
+}
+
+.text-vertical-middle {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+/* ============================= Body ====================================== */
+
+/* ============================= border ==================================== */
+.border-left-dashed {
+  border-left: 1px dashed var(--label-color);
+}
+
+/* ============================= border ==================================== */
+
+/* ============================= Table ===================================== */
+.row-head {
+  color: var(--label-color);
+  font-size: 11px;
+  line-height: 15px;
+  min-width: 110px;
+}
+
+.row-value {
+  color: var(--black);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* ============================= Table ===================================== */
+
+/* ============================= Layout ==================================== */
+.bg-light {
+  background-color: transparent !important;
+}
+
+.fixed-bottom {
+  left: unset;
+  right: unset;
+}
+
+.border-shadow {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 0px 11px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ============================= Layout ==================================== */
+
+/* ============================= Menu ====================================== */
+.navbar-brand {
+  font-family: GothamProBold;
+}
+
+.nav-item,
+.navbar-light .navbar-nav .nav-link {
+  font-family: GothamProLight;
+  font-weight: 600;
+  font-size: 11px;
+  margin-right: 15px;
+}
+
+/* ============================= Menu ====================================== */
+
+/* ============================= Form ====================================== */
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* ============================= Form ====================================== */
+
+/* ============================= Button ==================================== */
+.btn-primary {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  color: #fff;
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-lg {
+  min-height: 50px;
+}
+
+/* ============================= Button ==================================== */
+
+/* ============================= Checkbox ================================== */
+.mat-checkbox-checked.mat-primary .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
+  background-color: var(--primary);
+}
+
+/* ============================= Checkbox ================================== */
+
+/* ============================= Card ====================================== */
+.card-container {
+  width: auto;
+  padding: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: gray;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+  border: 0px;
+  /* max-width: 300px;
+  float: left; */
+  display: inline-block;
+  margin-right: 15px;
+  background-color: var(--white);
+}
+
+.card:hover {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.card-img-top {
+  width: inherit;
+  height: 210px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* ============================= Card ====================================== */

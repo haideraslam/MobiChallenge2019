@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-5">
+    <img class="brand-image" src="../../../../assets/image/logoCarReimagin.png" alt="OTOZ">
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 pt-lg-5">
+    <p class="test-capitalize fs-25 mt-lg-5 mt-5 mb-0">No.1 Car Destination</p>
+    <p class="fs-12 mb-50">Discover more than 9000+ cars to start your new journey</p>
+    <form class="form">
+      <mat-form-field class="full-width">
+        <mat-label>Pick-up Location</mat-label>
+        <mat-select placeholder="All Locations" [(value)]="cookiesData.pickupLocation">
+          <mat-option>-- None --</mat-option>
+          <mat-optgroup label="City">
+            <mat-option value="Dundee Airport (HIAL)">Dundee Airport (HIAL)</mat-option>
+            <mat-option value="University of Dundee">University of Dundee</mat-option>
+            <mat-option value="Camperdown Park">Camperdown Park</mat-option>
+            <mat-option value="V&A Museum and RRS Discovery">V&A Museum and RRS Discovery</mat-option>
+            <mat-option value="J M Barrie's Birthplace">J M Barrie's Birthplace</mat-option>
+            <mat-option value="Corrie Fee and Jock's Road">Corrie Fee and Jock's Road</mat-option>
+            <mat-option value="Caledonian Railway">Caledonian Railway</mat-option>
+            <mat-option value="Carnoustie">Carnoustie</mat-option>
+            <mat-option value="Lunan Bay">Lunan Bay</mat-option>
+            <mat-option value="Glamis Castle">Glamis Castle</mat-option>
+            <mat-option value="Broughty Castle">Broughty Castle</mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="from" placeholder="From" [formControl]="startDate">
+        <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+        <mat-datepicker #from></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="until" placeholder="Until" [formControl]="endDate">
+        <mat-datepicker-toggle matSuffix [for]="until"></mat-datepicker-toggle>
+        <mat-datepicker #until></mat-datepicker>
+      </mat-form-field>
+
+      <mat-checkbox color="primary">I don't have a credit card.</mat-checkbox>
+
+      <div class="mt-4">
+        <div class="row">
+          <div class="col-lg-12 col-lg-12 col-lg-12 col-lg-12 col-12 pr-lg-1 mb-2">
+            <button type="button" class="btn btn-block btn-primary btn-lg br-30 fs-12" (click)="searchCars()">SEARCH CARS</button>
+          </div>
+          <!-- <div class="col-lg-6 pl-lg-1">
+            <button type="button" class="btn btn-block btn-outline-secondary btn-lg br-30 fs-12" (click)="searchCarsWithDrivers()">SEARCH CARS + DRIVERS</button>
+          </div> -->
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<p-toast position="top-right"></p-toast>

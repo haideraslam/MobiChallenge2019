@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 border-shadow bg-white rounded mt-xl-2 mt-lg-2 mt-md-2 mt-sm-2 mt-2">
+    <app-search-bar-top></app-search-bar-top>
+  </div>
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-5 p-0">
+    <div class="card-container">
+      <div class="card col-xl-4 col-lg-4 col-md-5 col-sm-6 col-12 rounded-top br-8" *ngFor="let car of cars; let i=index">
+        <img class="card-img-top" src="../../../../assets/image/{{car.vehicleDetails.featuredImage}}" alt="Card image cap">
+        <div class="card-body" style="border-bottom: 2px solid #F3F3F3;">
+          <h6 class="card-title font-weight-bold">{{car.vehicleDetails.model}}</h6>
+          <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+          <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+          <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+          <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+          <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+          <p class="card-text fs-12 text-muted mb-1">{{car.vehicleDetails.comments}}</p>
+          <p class="card-text fs-12 text-muted">
+            {{car.vehicleDetails.make}} | {{car.vehicleDetails.transmission}} | {{car.vehicleDetails.seats}} Seats | {{car.vehicleDetails.doors}} Doors
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-xl-3 mt-lg-3 mt-md-3 mt-sm-3 mt-3">
+            <h6 class="mb-lg-0 pl-xl-3 pl-lg-3 pl-pd-3 pl-sp-3 pl-3">{{car.vehicleDetails.rentPerDay}}</h6>
+            <p class="text-muted pl-xl-3 pl-lg-3 pl-pd-3 pl-sp-3 pl-3">GBP/day</p>
+          </div>
+          <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-12 mt-xl-3 mt-lg-3 mt-md-3 mt-sm-3 mt-3 pr-xl-3 pr-lg-4 pr-pd-3 pr-sp-3 pr-3">
+            <button (click)="bookNowClicked(car)" class="btn btn-primary btn-block btn-lg br-30 fs-12">BOOK NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

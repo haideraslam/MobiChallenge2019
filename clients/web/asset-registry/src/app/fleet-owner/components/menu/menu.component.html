@@ -1,0 +1,15 @@
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': selectedMenu === 'Dashboard'}" (click)="menuChanged('Dashboard')" [routerLink]="[ '/fleet-owner/dashboard' ]">Dashboard</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': selectedMenu === 'Inventory'}" (click)="menuChanged('Inventory')" [routerLink]="[ '/fleet-owner/allocate-car-to-usecase' ]">Inventory</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': selectedMenu === 'Track Fleet'}" (click)="menuChanged('Track Fleet')" [routerLink]="[ '/fleet-owner/track-fleet' ]">Track Fleet</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': selectedMenu === 'Trips'}" (click)="menuChanged('Trips')" [routerLink]="[ '/fleet-owner/trips' ]">Trips</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': selectedMenu === 'Wallet'}" (click)="menuChanged('Wallet')" [routerLink]="[ '/fleet-owner/wallet' ]">Wallet</a>
+</li>

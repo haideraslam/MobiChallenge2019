@@ -1,0 +1,29 @@
+query AllVehicles{
+  description: "Returns all vehicles"
+  statement: 
+          SELECT netsol.innovation.aar.vehicle.model.Vehicle
+          LIMIT _$limit
+          SKIP _$number
+}
+query GetVehicleInfo{
+  description: "Returns vehicle information based on VIN"
+  statement: 
+          SELECT netsol.innovation.aar.vehicle.model.Vehicle
+          WHERE (vin==_$vin)
+}
+query GetTransactionHistory{
+  description: "Returns all historian transactions"
+  statement: 
+          SELECT org.hyperledger.composer.system.HistorianRecord
+}
+query GetWalletInfo{
+  description: "Returns Account information based on Address"
+  statement: 
+          SELECT netsol.innovation.aar.token.model.Account
+          WHERE (address==_$address)
+}
+query GetAllUsecases{
+  description: "Returns list of all usecases e.g. OTOZ (Car sharing)"
+  statement: 
+          SELECT netsol.innovation.aar.usecase.model.Usecase
+}

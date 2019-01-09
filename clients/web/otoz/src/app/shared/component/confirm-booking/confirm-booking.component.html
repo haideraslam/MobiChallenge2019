@@ -1,0 +1,205 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 border-shadow bg-white rounded mt-xl-2 mt-lg-2 mt-md-2 mt-sm-2 mt-2">
+    <app-search-bar-top></app-search-bar-top>
+  </div>
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-5 p-0">
+    <div class="wrapper border-shadow">
+      <div class="row">
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12">
+          <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12">
+              <img src="../../../../assets/image/{{cookiesData.car.vehicleDetails.featuredImage}}" class="car-image" alt="">
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 pt-lg-5 ">
+              <h6 class="heading mt-lg-3 mb-0">{{cookiesData.car.vehicleDetails.model}}</h6>
+              <div class="row">
+                <div class="col-lg-6">
+                  <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+                  <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+                  <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+                  <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+                  <img src="../../../../assets/image/baseline-star.svg" class="rating-stars" alt="">
+                </div>
+                <div class="col-lg-6 label pl-0">5 Reviews</div>
+              </div>
+              <div class="row mt-lg-5">
+                <div class="col-lg-12 text text-capitalize">
+                  {{cookiesData.car.vehicleDetails.comments}}
+                </div>
+              </div>
+              <div class="row mt-lg-5">
+                <div class="col-lg-12">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="row-head">Year :</td>
+                        <td class="row-value">{{cookiesData.car.vehicleDetails.year}}</td>
+                      </tr>
+                      <tr>
+                        <td class="row-head">Transmission :</td>
+                        <td class="row-value">{{cookiesData.car.vehicleDetails.transmission}}</td>
+                      </tr>
+                      <tr>
+                        <td class="row-head">Seats :</td>
+                        <td class="row-value">{{cookiesData.car.vehicleDetails.seats}}</td>
+                      </tr>
+                      <tr>
+                        <td class="row-head">Doors :</td>
+                        <td class="row-value">{{cookiesData.car.vehicleDetails.doors}}</td>
+                      </tr>
+                      <tr>
+                        <td class="row-head">Fuel Type :</td>
+                        <td class="row-value">{{cookiesData.car.vehicleDetails.fuelType}}</td>
+                      </tr>
+                      <tr>
+                        <td class="row-head">Fuel :</td>
+                        <td class="row-value">{{cookiesData.car.vehicleDetails.fuel}}</td>
+                      </tr>
+                      <tr>
+                        <td class="row-head">Mileage :</td>
+                        <td class="row-value">{{cookiesData.car.vehicleDetails.mileage}} miles</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 border-left-dashed">
+          <div class="col-lg-12 pt-lg-5">
+            <mat-form-field class="full-width">
+              <mat-label>Pick-up Location</mat-label>
+              <mat-select placeholder="All Locations" disabled [(value)]="cookiesData.pickupLocation">
+                <mat-option>-- None --</mat-option>
+                <mat-optgroup label="City">
+                  <mat-option value="Dundee Airport (HIAL)">Dundee Airport (HIAL)</mat-option>
+                  <mat-option value="University of Dundee">University of Dundee</mat-option>
+                  <mat-option value="Camperdown Park">Camperdown Park</mat-option>
+                  <mat-option value="V&A Museum and RRS Discovery">V&A Museum and RRS Discovery</mat-option>
+                  <mat-option value="J M Barrie's Birthplace">J M Barrie's Birthplace</mat-option>
+                  <mat-option value="Corrie Fee and Jock's Road">Corrie Fee and Jock's Road</mat-option>
+                  <mat-option value="Caledonian Railway">Caledonian Railway</mat-option>
+                  <mat-option value="Carnoustie">Carnoustie</mat-option>
+                  <mat-option value="Lunan Bay">Lunan Bay</mat-option>
+                  <mat-option value="Glamis Castle">Glamis Castle</mat-option>
+                  <mat-option value="Broughty Castle">Broughty Castle</mat-option>
+                </mat-optgroup>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">
+                <mat-form-field class="full-width">
+                  <input matInput disabled [matDatepicker]="from1" placeholder="From" [formControl]="startDate">
+                  <mat-datepicker-toggle matSuffix [for]="from1"></mat-datepicker-toggle>
+                  <mat-datepicker #from1></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6">
+                <mat-form-field class="full-width">
+                  <input matInput disabled [matDatepicker]="until1" placeholder="Until" [formControl]="endDate">
+                  <mat-datepicker-toggle matSuffix [for]="until1"></mat-datepicker-toggle>
+                  <mat-datepicker #until1></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 mt-lg-5">
+            <div class="row">
+              <div class="col-lg-6 text text-capitalize">
+                trip price ({{cookiesData.car.vehicleDetails.rentPerDay}} x {{cookiesData.numberOfDays}} day) :
+              </div>
+              <div class="col-lg-6 text-right">
+                <span class="text">GBP</span> {{cookiesData.totalRent}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6 text text-capitalize">
+                commission ({{cookiesData.commissionPerDay}} x {{cookiesData.numberOfDays}} day) :
+              </div>
+              <div class="col-lg-6 text-right">
+                <span class="text">GBP</span> {{cookiesData.totalCommission}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6 text text-capitalize">
+                discount :
+              </div>
+              <div class="col-lg-6 text-right">
+                <span class="text">GBP</span> {{cookiesData.discount}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 mt-lg-5">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="d-inline-flex row-value">
+                  Total
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="text-bold float-right">
+                  <div class="float-left" style="font-size: 20px;">GBP</div>
+                  <div class="float-right ml-xl-1 fs-25 primary">{{(cookiesData.totalRent + cookiesData.totalCommission) - cookiesData.discount}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 mt-lg-4">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="pull-left">
+                  <div class="text text-muted">
+                    Available Tokens :
+                  </div>
+                  <div class="text text-muted">
+                    Redeem tokens to avail discount
+                  </div>
+                </div>
+                <div class="pull-right">
+                  <span class="text text-muted text-bold" style="font-size: 15px">{{cookiesData.balance}}</span>
+                </div>
+                <div class="clearfix"></div>
+                <div class="mt-2">
+                  <button (click)="calculateDiscount()" class="btn btn-block btn-primary btn-lg br-30 text text-uppercase">REDEEM</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 mt-lg-2">
+            <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-block btn-primary btn-lg br-30 text text-uppercase">confirm booking</button>
+            <p class="text text-center fs-8">Not included in rental price. tax and service fee | One day booking in advance is required</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast position="top-right"></p-toast>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Smart Contract</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{obj.contractTerms}} <a href="#">Read More...</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-lg br-30 text text-uppercase" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-lg br-30 text text-uppercase" data-dismiss="modal" (click)="navigateToPickup()">Sign Smart Contract</button>
+      </div>
+    </div>
+  </div>
+</div>

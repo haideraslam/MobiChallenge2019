@@ -1,0 +1,17 @@
+namespace netsol.innovation.aar.usecase.model
+
+import netsol.innovation.aar.vehicle.model.*
+import netsol.innovation.aar.token.model.*
+import netsol.innovation.aar.participants.model.*
+import netsol.innovation.aar.vehicle.lease.*
+
+asset Usecase identified by name{
+  o String name
+  o String description
+}
+
+transaction AllocateCarToUsecase
+{ 
+  --> Vehicle vehicle
+  --> Usecase usecase
+}

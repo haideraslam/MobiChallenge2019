@@ -1,0 +1,108 @@
+namespace netsol.innovation.aar.participants.model
+
+import netsol.innovation.aar.token.model.*
+
+/** An absctract participant who can own car */
+abstract participant BusinessPartner identified by bpId {
+    o String bpId
+    o String title
+
+    --> Account account
+}
+
+participant Person extends BusinessPartner {
+  o String firstName
+  o String lastName
+  o String middleName  optional
+  o Gender gender optional
+  o ContactDetails contactDetails optional
+  o DateTime Dob
+  o KYCDetails kycDetails optional
+}
+
+abstract participant Business extends BusinessPartner {
+  o ContactDetails headquarters optional
+}
+
+participant LegalAuthority extends Business {
+}
+
+participant Dealer extends Business {
+}
+
+participant Servicer extends Business {
+}
+
+participant Manufacturer extends Business {
+}
+
+participant FinanceCompany extends Business {
+  --> Manufacturer ownerCompany optional
+}
+
+participant FleetOwner extends Business {
+}
+
+participant Renter extends Person {
+}
+
+enum Gender {
+ o MALE
+ o FEMALE
+ o OTHER
+}
+
+concept ContactDetails {
+  o String email  optional
+  o String mobilePhone  optional
+  o String homePhone optional
+  o Address address optional
+}
+
+concept Address {
+  o String city optional
+  o String country optional
+  o String locality optional
+  o String region optional
+  o String street optional
+  o String street2 optional
+  o String street3 optional
+  o String postalCode optional
+  o String postOfficeBoxNumber optional
+}
+concept KYCDetails {
+  o String idDocument
+  o String picture
+}
+
+transaction UploadKyc {
+  --> Renter renter
+  o KYCDetails kycDetails
+}
+
+event KycUploadedEvent
+{
+  
+}
+
+event RenterSignedUp
+{ 
+
+}
+event FleetOwnerSignedUp
+{ 
+  
+}
+transaction CreateRenter
+{ 
+    o String bpId
+    o String title
+    o String firstName
+    o String lastName
+    o DateTime Dob
+}
+transaction CreateFleetOwner
+{ 
+    o String bpId
+    o String title
+}

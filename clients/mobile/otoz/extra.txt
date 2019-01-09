@@ -1,0 +1,14 @@
+npm i @babel/runtime
+npm i @expo/vector-icons
+npm i moment
+npm i native-base
+npm i react-native-camera
+npm i react-native-check-box
+npm i react-native-datepicker
+npm i react-native-drawer
+npm i react-native-elements
+npm i react-native-material-dropdown
+npm i react-native-simple-store
+npm i react-native-snap-carousel
+npm i react-native-star-rating
+npm i react-navigation

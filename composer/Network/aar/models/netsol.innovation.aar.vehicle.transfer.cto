@@ -1,0 +1,21 @@
+namespace netsol.innovation.aar.vehicle.transfer
+
+import netsol.innovation.aar.vehicle.model.*
+import netsol.innovation.aar.participants.model.*
+
+asset VehicleTransferRequest identified by requestId
+{
+  o String requestId
+  --> Vehicle vehicle
+  --> BusinessPartner newOwner
+  --> BusinessPartner oldOwner
+  o VehicleTransferStatus transferStatus
+}
+
+enum VehicleTransferStatus{
+  o TRANSFER_REQUESTED
+  o TRASNFER_APPROVED
+  o TRANSFER_REJECTED
+}
+
+

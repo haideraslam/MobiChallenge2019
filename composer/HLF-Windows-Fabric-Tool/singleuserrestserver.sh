@@ -1,0 +1,1 @@
+composer-rest-server -c admin@aar -n never -w true

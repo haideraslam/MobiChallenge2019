@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand text-uppercase font-weight-bold" [routerLink]="[ '/home' ]">
+    <img src="../../../assets/image/logoCarReimagin.png" alt="logo" width="100px">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-capitalize" [routerLink]="[ '/home']">home</a>
+      </li>
+      <li class="nav-item" *ngIf="cookiesData.bpid !== ''">
+        <a class="nav-link text-capitalize" [routerLink]="[ '/wallet']">wallet</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link text-capitalize" [routerLink]="[ '/home']">about</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link text-uppercase btn btn-sm btn-outline-secondary br-20 dropdown-toggle">
+          english
+        </a>
+      </li> -->
+    </ul>
+  </div>
+</nav>

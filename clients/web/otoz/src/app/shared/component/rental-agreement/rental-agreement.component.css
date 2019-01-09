@@ -1,0 +1,25 @@
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+.rental-agreement-receipt{
+  margin: auto;
+  width: 335px;
+  height: 435px;
+  padding: 40px;
+  background: url('../../../../assets/image/ticket.png');
+}
+
+agm-map {
+  height: 490px;
+}

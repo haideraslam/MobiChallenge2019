@@ -1,0 +1,41 @@
+<div class="row pt-xl-2 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+  <div class="col-xl-4 col-lg-3 col-md-3 col-sm-6 col-12">
+    <mat-form-field class="full-width">
+      <mat-label>Pick-up Location</mat-label>
+      <mat-select placeholder="All Locations" [(value)]="cookiesData.pickupLocation">
+        <mat-option>-- None --</mat-option>
+        <mat-optgroup label="City">
+          <mat-option value="Dundee Airport (HIAL)">Dundee Airport (HIAL)</mat-option>
+          <mat-option value="University of Dundee">University of Dundee</mat-option>
+          <mat-option value="Camperdown Park">Camperdown Park</mat-option>
+          <mat-option value="V&A Museum and RRS Discovery">V&A Museum and RRS Discovery</mat-option>
+          <mat-option value="J M Barrie's Birthplace">J M Barrie's Birthplace</mat-option>
+          <mat-option value="Corrie Fee and Jock's Road">Corrie Fee and Jock's Road</mat-option>
+          <mat-option value="Caledonian Railway">Caledonian Railway</mat-option>
+          <mat-option value="Carnoustie">Carnoustie</mat-option>
+          <mat-option value="Lunan Bay">Lunan Bay</mat-option>
+          <mat-option value="Glamis Castle">Glamis Castle</mat-option>
+          <mat-option value="Broughty Castle">Broughty Castle</mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+    <mat-form-field class="full-width">
+      <input matInput [matDatepicker]="from" placeholder="From" [formControl]="startDate">
+      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+      <mat-datepicker #from></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+    <mat-form-field class="full-width">
+      <input matInput [matDatepicker]="until" placeholder="Until" [formControl]="endDate">
+      <mat-datepicker-toggle matSuffix [for]="until"></mat-datepicker-toggle>
+      <mat-datepicker #until></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 pt-5-custom">
+    <button type="button" class="btn btn-block btn-primary btn-lg br-30 fs-12" (click)="searchCars()">SEARCH CARS</button>
+  </div>
+</div>
+<p-toast position="top-right"></p-toast>

@@ -1,0 +1,21 @@
+<div class="container">
+  <app-header>
+    <ng-content select="[header]"></ng-content>
+  </app-header>
+  <div class="col-lg-12 p-0 mt-60-n">
+    <div class="col-lg-2 pull-left">
+      <app-menu>
+        <ng-content select="[menu]"></ng-content>
+      </app-menu>
+    </div>
+    <div class="col-lg-10 pull-right">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="row pl-3">
+            <ng-content select="[body]"></ng-content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

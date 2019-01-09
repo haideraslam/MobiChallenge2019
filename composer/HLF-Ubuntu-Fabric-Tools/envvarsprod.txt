@@ -1,0 +1,15 @@
+export COMPOSER_CARD=admin@aar
+export COMPOSER_NAMESPACES=never
+export COMPOSER_AUTHENTICATION=true
+export COMPOSER_MULTIUSER=true
+export COMPOSER_PROVIDERS='{  "google": {    "provider": "google",    "module": "passport-google-oauth2",    "clientID": "998967841170-bh2t1a3t1i7jpn9s09sed6sv9p2lc3ht.apps.googleusercontent.com",    "clientSecret": "gQbtGqtZnLiXbBvlxGmk5qzX",    "authPath": "/auth/google",    "callbackURL": "/auth/google/callback",    "scope": "https://www.googleapis.com/auth/plus.login",    "successRedirect": "http://aarvm2.westeurope.cloudapp.azure.com:4200/loggedIn",    "failureRedirect": "/"  }, "github": {
+"provider": "github",
+"module": "passport-github",
+"clientID": "bf08ee1ca9635c2adc7d",
+"clientSecret": "a45b0099c117cec402a124772e959561c4fe6dfc",
+"authPath": "/auth/github",
+"callbackURL": "/auth/github/callback",
+"successRedirect": "oauthlogin://login?user=renter",
+"failureRedirect": "/"
+} }'
+

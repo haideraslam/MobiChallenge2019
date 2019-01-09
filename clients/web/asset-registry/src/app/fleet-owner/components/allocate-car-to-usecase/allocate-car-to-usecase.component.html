@@ -1,0 +1,57 @@
+<app-layout>
+  <button header class="btn btn-block btn-outline-light rounded-20 text-uppercase" *ngIf="allocateSelectedVisibility" [disabled]="!selectedVehicles.length" (click)="allocateClicked();">Allocate Selected</button>
+  <!-- <input header type="file" class="btn btn-block btn-outline-light rounded-20 text-uppercase" (change)="fileChanged($event);" /> -->
+  <app-menu menu [selectedMenu]='"Inventory"'></app-menu>
+  <div body class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-15 pl-0" *ngFor="let car of cars;">
+    <div class="card shadow">
+      <div class="card-body pb-0">
+        <div class="pull-left">
+          <h5 class="m-0">{{car.vehicleDetails.make}} - {{car.vehicleDetails.model}}</h5>
+          <p class="text text-muted fs-11">Token Balance : {{car.balance}} OTZ</p>
+        </div>
+        <div class="pull-right">
+          <p-checkbox name="groupname" [(ngModel)]="selectedVehicles" value="{{car.vin}}" inputId="{{car.vin}}"></p-checkbox>
+        </div>
+      </div>
+      <a [routerLink]="[ '/fleet-owner/car-details', car.vin, car.balance ]" class="margin-auto">
+        <img class="img-thumbnail" src="assets/image/{{car.vehicleDetails.featuredImage}}" alt="{{car.vehicleDetails.featuredImage}}">
+      </a>
+      <div class="card-body pt-0">
+        <p class="text text-muted fs-10 pull-left truncate" pTooltip="{{car.vin}}" tooltipPosition="top">VIN: {{car.vin}}</p>
+        <p class="text text-muted fs-10 pull-right">Model:  {{car.vehicleDetails.model}}</p>
+        <div class="clearfix"></div>
+        <!-- <button type="button" class="btn btn-default btn-block text-uppercase rounded-20">View history</button> -->
+        <button type="button" class="btn btn-outline-dark btn-block text-uppercase rounded-20">{{car.currentContract ? "On Trip" : "Off Trip"}}</button>
+      </div>
+      <div class="card-body pt-0">
+        <div *ngIf="car.usecase">
+          <h6>Allocated to <b>{{car.usecase.split('#')[1]}}</b></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-layout>
+
+
+<!-- modal -->
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Allocate to Usecase</h4>
+        <button type="button" class="close" (click)="closePopup()"><span>&times;</span></button>
+      </div>
+      <div class="modal-body text-center">
+        <p-dropdown [options]="options" [(ngModel)]="selectedOption" [showClear]="true"></p-dropdown>
+      </div>
+      <div class="modal-footer modal-footer-center text-center">
+        <button type="button" class="btn btn-default btn-lg text-uppercase rounded-20" (click)="allocateVehicle()">Allocate</button>
+        <button type="button" class="btn btn-outline-dark btn-lg text-uppercase rounded-20" (click)="closePopup()">Cancel</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-growl [(value)]="messages"></p-growl>

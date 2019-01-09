@@ -1,0 +1,8 @@
+.carousel-control-prev, .carousel-control-next{
+  color: black;
+}
+
+.sr-only{
+  overflow: visible;
+  clip: unset;
+}

@@ -1,0 +1,249 @@
+/* You can add global styles to this file, and also import other style files test*/
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "assets/stylesheet/common.css";
+
+@media (min-width: 320px) {
+  .img-circle {
+    border-radius: 5em;
+    width: 25% !important;
+  }
+}
+
+@media (min-width: 425px) {
+  .img-circle {
+    border-radius: 5em;
+    width: 15% !important;
+  }
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+  .img-circle {
+    border-radius: 5em;
+    width: 15% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .img-circle {
+    border-radius: 5em;
+    width: 65% !important;
+  }
+}
+
+@media (min-width: 1126px) {
+  .img-circle {
+    border-radius: 5em;
+    width: 65% !important;
+  }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1366px;
+  }
+}
+
+@font-face {
+  font-family: GothamPro;
+  src: url(/assets/fonts/GothamPro_1.ttf) format('truetype');
+}
+
+:root {
+
+  --right-header-color: #7d2ae8;
+  --left-header-color: #00c4cc;
+
+  --primary: #5A55E0;
+  --dark: #222324;
+  --gray: #848483;
+  --light-gray: #E8E8E8;
+  --white: #F7F7F7;
+
+}
+
+body {
+  background-color: var(--white);
+  font-family: GothamPro;
+}
+
+.nav-link,
+.nav-link:hover {
+  font-size: 13px;
+  color: var(--gray) !important;
+  text-decoration: none;
+}
+
+a.btn-default,
+a.btn-default:hover {
+  color: var(--white) !important;
+}
+
+.btn-default,
+.btn-default:hover {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: bold;
+}
+
+button.btn.btn-lg {
+  min-width: 150px;
+}
+
+.form-control {
+  height: 30px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+:required {
+  background: url(/assets/image/dot.png) no-repeat;
+  background-position: right;
+}
+
+.button-postion-center {
+  margin: 50px;
+}
+
+.btn {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 0px;
+  color: var(--gray);
+}
+
+input[type=text] {
+  border: 0px;
+  border-bottom: 3px solid var(--white);
+  border-radius: 0px;
+  padding: 0.1rem 25px 0 0;
+}
+
+.shadow {
+  box-shadow: 0 0.125rem 2rem rgba(0, 0, 0, 0.25) !important;
+}
+
+.rounded {
+  border-radius: 8px !important;
+}
+
+.rounded-20 {
+  border-radius: 20px !important;
+}
+
+header {
+  background: linear-gradient(-90deg, var(--right-header-color), var(--left-header-color));
+  height: 200px;
+}
+
+.mt-60-n {
+  margin-top: -60px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.fs-10 {
+  font-family: GothamPro;
+  font-size: 10px !important;
+}
+
+.fs-11 {
+  font-family: GothamPro;
+  font-size: 11px !important;
+}
+
+/* =========================== Menu CSS =========================== */
+.menu {
+  margin: 0 0 0 10px;
+}
+
+.img-circle {
+  border-radius: 5em;
+  width: 40%;
+}
+
+.list-unstyled {
+  margin-top: 15px;
+  color: var(--gray);
+}
+
+.list-unstyled>li {
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+
+.list-unstyled>li>a,
+.nav-link {
+  cursor: pointer;
+}
+
+.active,
+.active:hover {
+  font-weight: bold;
+  color: var(--primary) !important;
+}
+
+.logout {
+  font-size: 12px;
+  margin-top: 100px;
+}
+
+/* =========================== Menu CSS =========================== */
+.card-img-custome {
+  width: 260px;
+  height: 150px;
+  margin: auto;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.modal-footer-center {
+  display: flow-root !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.no-border {
+  border: 0px;
+}
+
+.truncate {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.img-thumbnail {
+  height: 150px;
+  border: none;
+}
+
+.ui-rating a {
+  color: var(--primary) !important;
+}

@@ -1,0 +1,68 @@
+namespace netsol.innovation.aar.vehicle.model
+
+import netsol.innovation.aar.participants.model.*
+import netsol.innovation.aar.token.model.*
+import netsol.innovation.aar.vehicle.lease.*
+import netsol.innovation.aar.contract.model.*
+import netsol.innovation.aar.usecase.model.*
+
+asset Vehicle identified by vin {
+  o String vin
+  o String engineNumber optional
+  o VehicleDetails vehicleDetails
+  o String registrationNumber optional /** Will be assigned by legal authority */
+  
+  --> BusinessPartner currentOwner optional
+  --> VehicleLeaseDeal currentLeaseDeal optional
+
+  --> Account account
+
+  --> Manufacturer oem optional
+
+  --> FleetOwner fleetOwner optional
+  --> Contract currentContract optional
+  o VehicleLocation vehicleLocation optional
+  o Boolean locked
+  --> Usecase usecase optional
+}
+
+concept VehicleDetails {
+  o String make
+  o String model
+  o String year optional
+  o String variant optional
+  o String colour optional
+  o String transmission optional //manual,automatic 
+  o Integer numberOfSeats optional
+  o String engineType optional //fuel, hybrid, electric
+  o String engineFuel optional //petrol, disel
+  o String maximumPower optional //:66 kW (90 hp)total 
+  o String maximumTorque optional // 142 Nm
+  o Integer engineCc optional // cc
+  o String bodyType optional
+  o Double retailPrice optional
+  o String comments optional
+  o String series optional
+  o String featuredImage optional
+  o String[] images optional
+  o Integer seats optional
+  o Integer doors optional
+  o Double rentPerDay optional
+  o String fuelType optional
+  o String fuel optional
+  o String mileage optional
+}
+concept VehicleLocation {
+  o String currentCoordinates optional
+  o String currentLocationName optional
+}
+@commit(false)
+@returns(Vehicle[])
+transaction GetAvailableVehicles
+{ 
+}
+@commit(false)
+@returns(Vehicle[])
+transaction GetBookedVehicles
+{ 
+}

@@ -1,0 +1,98 @@
+<app-layout>
+  <!-- <button header class="btn btn-block btn-outline-light rounded-20 text-uppercase" *ngIf="allocateSelectedVisibility" [disabled]="!selectedVehicles.length" (click)="allocateClicked();">Allocate Selected</button> -->
+  <app-menu menu [selectedMenu]='"Trips"'></app-menu>
+  <div body *ngFor="let item of data" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-15 pl-0">
+    <div class="card shadow">
+      <div class="card-body pb-0">
+        <div class="col-lg-12">
+          <div class="pull-left">
+            <h5 class="m-0">{{ item.vehicleData?.vehicleDetails?.model }}</h5>
+            <p class="text text-muted fs-11">vin : {{ item.vehicleData?.vin }}</p>
+          </div>
+          <div class="pull-right">
+            <p-rating [ngModel]="item.tripSummary ? item.tripSummary.rating : 3 " readonly="true" stars="5" [cancel]="false"></p-rating>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-lg-12 mt-xl-2 text text-capitalize">
+          <p class="mb-1">{{ item.vehicleData?.vehicleDetails?.comments }}</p>
+          <p>{{ item.vehicleData?.vehicleDetails?.year }} | {{ item.vehicleData?.vehicleDetails?.transmission }} | {{ item.vehicleData?.vehicleDetails?.seats }} Seats | {{ item.vehicleData?.vehicleDetails?.doors }} Doors</p>
+        </div>
+        <div class="col-xl-12 dropdown-divider"></div>
+        <div class="col-xl-12">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Pick-up Location</p>
+              <p class="text text-bold ellipse">{{item.pickupLocation}}</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Drop-off Location</p>
+              <p class="text text-bold ellipse">{{item.dropoffLocation}}</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row mb-4">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p class="text mb-1">From</p>
+              <p class="text text-bold mb-0">{{item.startDate | date:'short' }}</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p class="text mb-1">Until</p>
+              <p class="text text-bold mb-0">{{item.endDate | date:'short'}}</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Mileage</p>
+              <p class="text text-bold">{{item.tripSummary?.mileage | number:'1.0-2'}} miles</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Average Speed</p>
+              <p class="text text-bold">{{item.tripSummary?.averageSpeed | number:'1.0-2'}} mph</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Tire Pressure</p>
+              <p class="text text-bold">{{item.tripSummary?.tirePressure}} psi</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Hard Brakes</p>
+              <p class="text text-bold">{{item.tripSummary?.noOfHardBrakes}}</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Collisions</p>
+              <p class="text text-bold">{{item.tripSummary?.collisionCount}}</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <p class="text mb-0">Fuel Consumption</p>
+              <p class="text text-bold">{{item.tripSummary?.fuelConsumption | number:'1.0-2'}} miles / liter</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="background-color: #e8e8e8;">
+        <div class="row" style="padding-left: 20px">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+            <p class="text total">Total :</p>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" style="padding-left: 10px">
+            <span class="gbp">GBP</span>
+            <span class="total-amount">{{item.amount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="btn-position">
+      <a href="javascript:void(0)" class="btn btn-lg btn-default btn-block text rounded-20">VIEW DETAILS</a>
+    </div> -->
+  </div>
+</app-layout>

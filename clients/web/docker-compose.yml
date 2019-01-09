@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  webotoz:
+    container_name: 'webotoz'
+#    build: './otoz'
+    image: 'innovationlab/webotozapp'
+    ports:
+      - '8080:80'
+#    volumes:
+#      - './otoz/dist/POC:/usr/local/apache2/htdocs/'
+    networks:
+      - 'basic'
+
+
+  assetregistry:
+    container_name: 'assetregistry'
+#    build: './asset-registry'
+    image: 'innovationlab/assetregistryapp'
+    ports:
+      - '8081:81'
+#    volumes:
+#      - './asset-registry/dist/POC:/usr/local/apache2/htdocs/'
+    networks:
+      - 'basic'
+
+networks:
+  basic:

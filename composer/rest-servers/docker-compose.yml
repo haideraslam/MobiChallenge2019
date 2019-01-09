@@ -1,0 +1,47 @@
+version: '3'
+services:
+  srestserver:
+    image: innovationlab/composerrestserver
+    restart: always
+    network_mode: "host"
+    environment:
+      - COMPOSER_CARD=admin@aar
+      - COMPOSER_MULTIUSER=false
+      - COMPOSER_AUTHENTICATION=false
+      - COMPOSER_WEBSOCKETS=false
+      - COMPOSER_NAMESPACES=always
+      - COMPOSER_PORT=3001
+    container_name: srestserver
+    volumes:
+      - $HOME/.composer:/root/.composer
+  mrestserver:
+    image: innovationlab/composerrestserver
+    restart: always
+    network_mode: "host"
+    environment:
+      - COMPOSER_CARD=admin@aar
+      - COMPOSER_MULTIUSER=true
+      - COMPOSER_AUTHENTICATION=true
+      - COMPOSER_WEBSOCKETS=true
+      - COMPOSER_NAMESPACES=always
+      - COMPOSER_PORT=3000
+      - 'COMPOSER_PROVIDERS={"google": { "provider": "google", "module": "passport-google-oauth2", "clientID": "998967841170-bh2t1a3t1i7jpn9s09sed6sv9p2lc3ht.apps.googleusercontent.com", "clientSecret": "gQbtGqtZnLiXbBvlxGmk5qzX", "authPath": "/auth/google", "callbackURL": "/auth/google/callback", "scope": "https://www.googleapis.com/auth/plus.login", "successRedirect": "http://aarvm-dev.westeurope.cloudapp.azure.com:80/loggedIn", "failureRedirect": "/" }}'
+    container_name: mrestserver
+    volumes:
+      - $HOME/.composer:/root/.composer
+  mmrestserver:
+    image: innovationlab/composerrestserver
+    restart: always
+    network_mode: "host"
+    environment:
+      - COMPOSER_CARD=admin@aar
+      - COMPOSER_MULTIUSER=true
+      - COMPOSER_AUTHENTICATION=true
+      - COMPOSER_WEBSOCKETS=false
+      - COMPOSER_NAMESPACES=always
+      - COMPOSER_PORT=3002
+      - 'COMPOSER_PROVIDERS={"google": { "provider": "google", "module": "passport-google-oauth2", "clientID": "998967841170-bh2t1a3t1i7jpn9s09sed6sv9p2lc3ht.apps.googleusercontent.com", "clientSecret": "gQbtGqtZnLiXbBvlxGmk5qzX", "authPath": "/auth/google", "callbackURL": "/auth/google/callback", "scope": "https://www.googleapis.com/auth/plus.login", "successRedirect": "http://aarvm-dev.westeurope.cloudapp.azure.com:81/loggedIn", "failureRedirect": "/" }}'
+    container_name: mmrestserver
+    volumes:
+      - $HOME/.composer:/root/.composer
+

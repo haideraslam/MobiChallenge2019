@@ -1,0 +1,17 @@
+#
+# Copyright IBM Corp All Rights Reserved
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+version: '3'
+networks:
+  basic:
+services:
+  imageserver:
+    image: innovationlab/imageserver
+    restart: always
+    container_name: imageserver
+    ports:
+      - 3300:3300
+    networks:
+      - basic

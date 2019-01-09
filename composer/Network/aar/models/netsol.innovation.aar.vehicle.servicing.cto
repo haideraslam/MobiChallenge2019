@@ -1,0 +1,54 @@
+namespace netsol.innovation.aar.vehicle.servicing
+
+import netsol.innovation.aar.participants.model.*
+import netsol.innovation.aar.token.model.*
+import netsol.innovation.aar.vehicle.model.*
+
+asset VehicleServiceRequest identified by requestId
+{
+  o String requestId
+  --> Vehicle vehicle
+  --> Servicer servicer
+  --> BusinessPartner requestor
+  o VehicleServiceStatus requestStatus
+  o VehicleServiceDetails serviceDetails   //** For POC this will represent quotation and services both */
+}
+
+enum VehicleServiceStatus {
+  o SERVICING_CAR_DROPPED
+  o SERVICING_CAR_DROPPED_ACCEPTED
+  o SERVICING_QUOTATION_PROVIDED
+  o SERVICING_QUOTATION_APPROVED_SERVICE_STARTED
+  o SERVICING_PENDING_PICKUP
+  o SERVICING_COMPLETE
+}
+
+enum ServiceItems {
+  o CHANGE_OIL
+  o LUBRICATE_CHASSIS
+  o CHANGE_OIL_FILTER
+  o CHANGE_AIR_FILTER
+  o CHANGE_TRANSMISSION_FLUID
+  o FLUSH_COOLING_SYSTEM
+  o ADD_ANTIFREEZE
+  o ALIGN_WHEELS
+  o ROTATE_TIRES
+  o REPLACE_TIRES
+  o ADJUST_BRAKES
+  o TUNE_ENGINE
+  o OTHER_SERVICE
+}
+
+enum ServiceType {
+  o BASIC
+  o ADVANCED
+  o OTHER
+}
+
+concept VehicleServiceDetails {
+  o Integer milage optional
+  o ServiceType type optional
+  o ServiceItems[] servicesPerformed optional
+  o String servicerNotes optional
+  o Integer totalBill optional
+}

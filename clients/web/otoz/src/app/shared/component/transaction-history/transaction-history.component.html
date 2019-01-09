@@ -1,0 +1,31 @@
+<h4>Current active peers: 3</h4>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th class="text-nowrap" scope="col">Transaction Id</th>
+        <th class="text-nowrap" scope="col">Transaction Type</th>
+        <th class="text-nowrap" scope="col">Signed By</th>
+        <th class="text-nowrap" scope="col">Events Emitted</th>
+        <th class="text-nowrap" scope="col">Transaction Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <th scope="row">
+          <span class="d-inline-block text-truncate" style="max-width: 150px;">
+            {{item.transactionId}}
+          </span>
+        </th>
+        <td>{{item.transactionType?.split('.').pop()}}</td>
+        <td>{{item.participantInvoking?.split('.').pop()}}</td>
+        <td>
+          <ul>
+            <li *ngFor="let li of item.eventsEmitted">{{li.$class?.split('.').pop()}}</li>
+          </ul>
+        </td>
+        <td>{{item.transactionTimestamp | date:'medium' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
